@@ -1,20 +1,5 @@
-//! The type of ratios and related operations.
-//!
-//! A **ratio** is the result of dividing two integers, i.e., the numerator and
-//! denominator.
-//!
-//! # Examples
-//!
-//! ```
-//! use ratio::Ratio;
-//!
-//! let ratio = Ratio::new(1, 3); // 1 / 3
-//! assert_eq!(ratio.mul_trunc(20), 6); // trunc(20 * 1 / 3) = trunc(6.66..) = 6
-//! assert_eq!(ratio.mul_round(20), 7); // round(20 * 1 / 3) = round(6.66..) = 7
-//! println!("{:?}", ratio); // Ratio(1/3 ~= 1431655765/4294967296)
-//! ```
-
 #![cfg_attr(not(test), no_std)]
+#![doc = include_str!("../README.md")]
 
 use core::{cmp::PartialEq, fmt};
 
@@ -84,7 +69,7 @@ impl Ratio {
     /// # Examples
     ///
     /// ```
-    /// use ratio::Ratio;
+    /// use int_ratio::Ratio;
     ///
     /// let ratio = Ratio::new(1, 2);
     /// assert_eq!(ratio.inverse(), Ratio::new(2, 1));
@@ -98,7 +83,7 @@ impl Ratio {
     /// # Examples
     ///
     /// ```
-    /// use ratio::Ratio;
+    /// use int_ratio::Ratio;
     ///
     /// let ratio = Ratio::new(2, 3);
     /// assert_eq!(ratio.mul_trunc(99), 66);  // 99 * 2 / 3 = 66
@@ -114,7 +99,7 @@ impl Ratio {
     /// # Examples
     ///
     /// ```
-    /// use ratio::Ratio;
+    /// use int_ratio::Ratio;
     ///
     /// let ratio = Ratio::new(2, 3);
     /// assert_eq!(ratio.mul_round(99), 66);  // 99 * 2 / 3 = 66
